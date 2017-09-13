@@ -11,14 +11,16 @@ return Math.floor(Math.random() * choices.length);
 }
  var word=choices[chooseWord()];   
 console.log(word);
+//split word into characters
 
+function myFunction() {
+    var str = word;
+    var res = str.split(" ");
+    document.getElementById("word").innerHTML = res;
 //replace word with dashes
 
- for (var i = 0; i < word.length; i++){
-     word[i] = "_ ";
- 
-     var dashWord=word[i];
-     console.log(dashWord);
+
+    
  };
  
  
