@@ -11,18 +11,14 @@ return Math.floor(Math.random() * choices.length);
 }
  var word=choices[chooseWord()];   
 console.log(word);
+
 //replace word with dashes
 
-for (var i = 0; i < word.length; i++){
-	word[i] = "_ ";
-}
-
-function printWord(){
-	for (var i = 0; i < word.length; i++){
-	var dashWord = document.getElementById("word");
-	var letter= document.createTextNode(word[i]);
-	dashWord.appendChild(letter);
-	}
-}
-
+ for (var i = 0; i < word.length; i++){
+     word[i] = "_ ";
+ 
+     var dashWord=word[i];
+     console.log(dashWord);
+ };
+ 
  
