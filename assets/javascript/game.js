@@ -13,14 +13,18 @@ return Math.floor(Math.random() * choices.length);
 console.log(word);
 //split word into characters
 
-function myFunction() {
-    var str = word;
-    var res = str.split(" ");
-    document.getElementById("word").innerHTML = res;
-//replace word with dashes
-
-
-    
- };
+//replace characters with dashes
+function createMask(m)
+{
+mask = "";
+word.lenght = m.length;
  
- 
+for (i = 0; i < word.lenght; i ++)
+{
+mask += "_";
+}
+return mask;
+ console.log(mask);
+}
+
+//display hidden word
