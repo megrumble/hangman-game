@@ -16,3 +16,16 @@ body{
 -o-background-size: cover;
 background-size: cover;
 }
+#wordDiv{
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+.letter {
+    float: left;
+    margin: 2px;
+}
+h4 {
+    text-align: center;
+    color: #901D1D;
+}
