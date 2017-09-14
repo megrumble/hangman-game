@@ -41,15 +41,19 @@ function makeDashes() {
 counter=6;
 $(document).on("keypress", function (event) {
     $("#wordDiv").empty();
+    
    var userKey = event.key;
+   correct=false;
  //check if guesses letter is correct/ place it correctly  
     for (var i = 0; i < len; i++) {
+        $("#myLives").empty();
         if ( userKey === word[i])
         {
             currentWordArr[i] = userKey;
             var newDiv = $("<div class='letter'>");
             newDiv.text(currentWordArr[i]);
             $("#wordDiv").append(newDiv);
+            correct=true;
 
         }  
         else if ( currentWordArr[i] != dash ){
@@ -62,11 +66,19 @@ $(document).on("keypress", function (event) {
             var newDiv = $("<div class='letter'>");
             newDiv.text(dash);
             $("#wordDiv").append(newDiv);
-            counter=counter-1;
+            // var livesDiv =$("<div class='number'>");
+            // livesDiv.text(counter);
+            // for (c=6; c>=0; c--) {
+            //     counter()
+            
+        
             
         }
     }
-    console.log(currentWordArr);
+    if (correct === false) {
+        counter--;
+    }
+    //console.log(currentWordArr);
 console.log(counter);
 
 $("#myLives").append(counter);
