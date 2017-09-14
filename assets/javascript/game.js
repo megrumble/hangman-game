@@ -75,13 +75,18 @@ $(document).on("keypress", function (event) {
             
         }
     }
-    if (correct === false) {
+    if (correct === false && counter > 0) {
+        
         counter--;
+        $("#myLives").append(counter);
+    }
+   else if (counter ===0) {
+        $("#myLives").append("You Lose!");
     }
     //console.log(currentWordArr);
 console.log(counter);
 
-$("#myLives").append(counter);
+// $("#myLives").append(counter);
 
 });
 
