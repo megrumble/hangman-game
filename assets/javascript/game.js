@@ -2,7 +2,7 @@ var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", 
 var guess; //guessed letter
 var correct; //correct guess
 var lives; //lives
-var counter; // count correct guesses
+var counter =6; // count correct guesses
 var word = "";
 var len = "";
 var dash = " _ ";
@@ -23,6 +23,7 @@ function chooseWord() {
     len = word.length;
     console.log(word);
     makeDashes();
+    $("#myLives").append(counter);
 }
 //replace characters with dashes
 function makeDashes() {
@@ -38,7 +39,7 @@ function makeDashes() {
 
 }
 //create guesses
-counter=6;
+
 $(document).on("keypress", function (event) {
     $("#wordDiv").empty();
     
@@ -54,22 +55,22 @@ $(document).on("keypress", function (event) {
             newDiv.text(currentWordArr[i]);
             $("#wordDiv").append(newDiv);
             correct=true;
+            
 
         }  
         else if ( currentWordArr[i] != dash ){
             var newDiv = $("<div class='letter'>");
             newDiv.text(currentWordArr[i]);
             $("#wordDiv").append(newDiv);
+            
 
         }
         else{
             var newDiv = $("<div class='letter'>");
             newDiv.text(dash);
             $("#wordDiv").append(newDiv);
-            // var livesDiv =$("<div class='number'>");
-            // livesDiv.text(counter);
-            // for (c=6; c>=0; c--) {
-            //     counter()
+            
+         
             
         
             
@@ -78,10 +79,14 @@ $(document).on("keypress", function (event) {
     if (correct === false && counter > 0) {
         
         counter--;
+        var newDiv = $("<div class='used'>");
+        newDiv.text(userKey);
+        $("#usedDiv").append(newDiv);
         $("#myLives").append(counter);
+
     }
-   else if (counter ===0) {
-        $("#myLives").append("You Lose!");
+    if (counter ===0) {
+        $("#myLives").text("You Lose!");
     }
     //console.log(currentWordArr);
 console.log(counter);

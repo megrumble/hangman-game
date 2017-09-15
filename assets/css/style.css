@@ -35,3 +35,14 @@ h4 {
     color: #D44F4F;
     font-family: 'Berkshire Swash', cursive;
 }
+#usedDiv{
+    text-align: center;
+    font-size: 30px;
+    color: #D44F4F;
+    font-family: 'Berkshire Swash', cursive;
+
+}
+.used {
+    float: left;
+    margin: 10px;
+}
